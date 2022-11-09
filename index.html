@@ -106,6 +106,7 @@ The Vice Director of 22th Financial Activity Club <br>
                                         <a class="a_item" href="homework1005.html">九九乘法表-1005</a>
                                         <a class="a_item" href="homework1012.html">排版-1012</a>
                                         <a class="a_item" href="homework1026.html">部落格排版-1026</a>
+                                        <a class="a_item" href="程式語言期中報告.pptx">專題網站-期中報告</a>
                                     </div>
                                 </div>
                             </p>
@@ -218,7 +219,7 @@ The Vice Director of 22th Financial Activity Club <br>
                             <!-- has successfully submitted-->
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3 mt-2 text-white">
-                                    <div class="fw-bolder">已傳送郵件至<a href="#!">lawrencelee0113@gmail.com</a></div>
+                                    <div class="fw-bolder">已傳送郵件至<a href="mailto: demo@gmail.com" id="send_mail">demo@gmail.com</a></div>
                                     
                                         請到您的信箱領取我給你的訊息吧~
                                     <br />
@@ -239,7 +240,8 @@ The Vice Director of 22th Financial Activity Club <br>
             $(document).ready(function () {
                 $("#submitButton").click(function (e) { 
                     e.preventDefault();
-                    console.log($("#emailAddress").val())
+                    $("#send_mail").html($("#emailAddress").val());
+                    $("#send_mail").attr('href',"mailto: "+$("#emailAddress").val());
                     $.ajax({
                         type: "GET",
                         url: "https://mywebsite.lawrencelee0113.repl.co/test",
